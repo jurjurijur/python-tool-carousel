@@ -1,6 +1,0 @@
----
-# defaults file for python-tool-carousel
-tool_folder: "/opt"
-python_tools_user: "{{ ansible_facts.user_id }}"
-python_tools_user_shellrcfile: "{{ ansible_env.HOME }}/.zshrc"
-python_tools_user_homefolder: "{{ ansible_env.HOME }}"
