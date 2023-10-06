@@ -19,35 +19,35 @@ Role Variables
 --------------
 
 The name of the user you want to own the pyenv and python tool directorys. 
-python_tools_user: user 
+'''python_tools_user: user '''
 
 The home folder of the user you want pyenv installed 
-python_tools_user_homefolder: /home/user
+'''python_tools_user_homefolder: /home/user'''
 
 The global python version you want active after installation (Default is system)
-pyenv_global: ["system"]
+'''pyenv_global: ["system"]'''
 
 what shellfile is used by the user so pyenv can be added to path (default is bashrc)
-python_tools_user_shellrcfile: '.bashrc'
+'''python_tools_user_shellrcfile: '.bashrc' '''
 
 the folder where you want to download your python tools to, en run your python tools from (default /opt)
-tool_folder: "/opt"
+''' tool_folder: "/opt" '''
 
 ``` You do not need to specify the defaults if you are okay with them```
 
 The python tools to isntall in its own virtual envoirment.
-python_tools:
+'''python_tools:'''
    name of the tool. this will be used to create executable symlinks 
-  - name: securityheaders
+ ''' - name: securityheaders'''
    the url to the git repo of the tool
-    repo: https://github.com/koenbuyens/securityheaders.git
+   ''' repo: https://github.com/koenbuyens/securityheaders.git'''
    needs to be exact version name that is available with pyenv
-    python_version: '2.7.18'
-  - name: jwt_tool
-    repo: https://github.com/ticarpi/jwt_tool.git
-    python_version: '3.11.4'
+  '''  python_version: '2.7.18' '''
+  ''' - name: jwt_tool '''
+    ''' repo: https://github.com/ticarpi/jwt_tool.git ''' 
+   ''' python_version: '3.11.4' '''
      Specify the main file to make executable within its virtualenv. Without one specified by default it will search for {{name}}.py
-    main_file: 'jwt_tool.py' 
+  '''  main_file: 'jwt_tool.py' '''
 
 
 Dependencies
