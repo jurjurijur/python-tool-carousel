@@ -26,31 +26,38 @@ The home folder of the user you want pyenv installed
 
 ``` python_tools_user_homefolder: /home/user ```
 
-
 The global python version you want active after installation (Default is system)
+
 ```pyenv_global: ["system"] ```
 
 what shellfile is used by the user so pyenv can be added to path (default is bashrc)
+
 ```python_tools_user_shellrcfile: '.bashrc' ```
 
 the folder where you want to download your python tools to, en run your python tools from (default /opt)
+
 ``` tool_folder: "/opt" ```
 
 ``` You do not need to specify the defaults if you are okay with them```
 
 The python tools to isntall in its own virtual envoirment.
-  name of the tool. this will be used to create executable symlinks 
-```python_tools:```
- ``` - name: securityheaders```
-   the url to the git repo of the tool
-   ``` repo: https://github.com/koenbuyens/securityheaders.git```
-   needs to be exact version name that is available with pyenv
-  ```  python_version: '2.7.18' ```
-  ``` - name: jwt_tool ```
-    ``` repo: https://github.com/ticarpi/jwt_tool.git ``` 
-   ``` python_version: '3.11.4' ```
-     Specify the main file to make executable within its virtualenv. Without one specified by default it will search for {{name}}.py
-  ```  main_file: 'jwt_tool.py' ```
+  name of the tool. this will be used to create executable symlinks
+  
+```
+python_tools:
+# name of the tool, this will be used to create the symlink to make the file executable
+  - name: securityheaders
+    repo: https://github.com/koenbuyens/securityheaders.git
+# specify exact python version as available in pyenv
+    python_version: '2.7.18'
+  - name: jwt_tool 
+    repo: https://github.com/ticarpi/jwt_tool.git  
+    python_version: '3.11.4'
+#  Specify the main file to make executable within its virtualenv.
+# Without one specified by default it will search for {{name}}.py
+    main_file: 'jwt_tool.py'
+
+```
 
 
 Dependencies
@@ -62,10 +69,8 @@ This ansible role uses ansible-role-pyenv from "static.dev" to convinently insta
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-``` main.yml```
+main.yml
+```
   name: install python tools 
   hosts: kali
   become: true
@@ -78,14 +83,15 @@ Including an example of how to use your role (for instance, with variables passe
           - name: securityheaders
             repo: https://github.com/koenbuyens/securityheaders.git
             python_version: '2.7.18'
-        
+
+```
         
                                                   
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
