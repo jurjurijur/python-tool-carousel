@@ -1,7 +1,6 @@
 galaxy_info:
-  author: your name
-  description: your role description
-  company: your company (optional)
+  author: Jurien  
+  description: thon Tool Carousel is an ansible role for cloning python tools from github and automagicly configuring them to be commandline executable in their own virtual envoirment.
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value

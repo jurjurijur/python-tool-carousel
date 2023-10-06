@@ -5,6 +5,7 @@
       repo: "{{ item.repo }}"
       dest: "{{tool_folder}}/{{ item.name }}"
       update: "{{ pyenv_update_git_install }}"
+      force: true
 
 #Install Python Tools 
 - name: Install requirements in virtual environment for each tool 

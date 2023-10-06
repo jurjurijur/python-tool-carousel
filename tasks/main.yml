@@ -15,13 +15,11 @@
     import_role:
       name: staticdev.pyenv
     vars:
-      pyenv_shellrc_file: "{{python_tools_user_shellrcfile}}"
+      pyenv_shellrc_file: "{{python_tools_user}}/{{python_tools_user_shellrcfile}}"
       pyenv_path: "{{python_tools_user_homefolder}}/.pyenv"
       pyenvrc_path: "{{ python_tools_user_homefolder }}"
       pyenv_owner: "{{ python_tools_user}}"
       pyenv_owner_group: "{{ python_tools_user }}"
-      pyenv_env: 'system'
-      pyenv_global: ["system"]
       pyenv_enable_virtualenvs: true
       pyenv_python_versions: "{{extracted_pyenv_python_versions}}"
       pyenv_virtualenvs: "{{extracted_pyenv_virtualenvs}}"
